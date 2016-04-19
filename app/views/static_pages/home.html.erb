@@ -1,13 +1,29 @@
 </div>
+<% if logged_in? %>
 <div class="row wrapper-chart">
-  <div class="wrapper-chart" class="col-sm-10">
-    <img src="http://mituwasou.com/common/img/chart/chart_analysis/granville-chart-theory1.gif" width="100%" height="300px">
+  <div class="wrapper-chart-menu">
+      <ul>
+        <li><a href="#"><i class="fa fa-commenting" aria-hidden="true"></i></a></li>
+        <li><a href="#"><i class="fa fa-area-chart" aria-hidden="true"></i></a></li>
+        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        <li><a href="#"><i class="fa fa-refresh" aria-hidden="true"></i></a></li>
+        <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i></a></li>
+      </ul>
+    </div>
+    <script type="text/javascript">DukascopyApplet = {"type":"chart","params":{"showUI":true,"showTabs":true,"showParameterToolbar":true,"showOfferSide":true,"allowInstrumentChange":true,"allowPeriodChange":true,"allowOfferSideChange":true,"showAdditionalToolbar":true,"showDetachButton":false,"presentationType":"candle","axisX":true,"axisY":true,"legend":true,"timeline":true,"showDateSeparators":true,"showZoom":true,"showScrollButtons":true,"showAutoShiftButton":true,"crosshair":true,"borders":false,"freeMode":false,"theme":"Pastelle","uiColor":"#000","availableInstruments":"l:","instrument":"EUR/USD","period":"5","offerSide":"BID","timezone":0,"live":true,"panLock":false,"width":"100%","height":"300","adv":"popup"}};</script><script type="text/javascript" src="//freeserv.dukascopy.com/2.0/core.js"></script>
+    </div>
+
+<div class="wrapper-chart-form">
+  <div class="chart-form">
+    <%= render 'shared/micropost_form' %>
   </div>
 </div>
-<div class="container">
 
-<% if logged_in? %>
+<div class="container">
   <div class="row">
+    <div class="col-md-8">
+      <%= render 'shared/feed' %>
+    </div>
     <aside class="col-md-4">
       <section class="user_info">
         <%= render 'shared/user_info' %>
@@ -16,9 +32,6 @@
         <%= render 'shared/micropost_form' %>
       </section>
     </aside>
-    <div class="col-md-8">
-      <%= render 'shared/feed' %>
-    </div>
    </div>
 <% else %>
   <div class="center jumbotron">
@@ -26,4 +39,6 @@
 
     <%= link_to "今すぐサインアップ", signup_path, class: "btn btn-lg btn-primary" %>
   </div>
+  
 <% end %>
+

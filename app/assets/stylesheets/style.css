@@ -1,6 +1,64 @@
 .wrapper-chart{
     width: 100%;
-    height: 300px;
+    height: auto;
     margin: 0;
     padding: 0;
+}
+
+.wrapper-chart-menu{
+    width: 100%;
+    height: 50px;
+    background: #999;
+}
+
+.wrapper-chart-menu ul{
+    width: 1100px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.wrapper-chart-menu ul li{
+    display: inline-block;
+}
+
+.wrapper-chart-menu ul li a{
+    line-height: 50px;
+    font-size: 30px;
+    color: #2b2b2b;
+    padding: 0 0.5em;
+}
+
+.wrapper-chart-form{
+    width: 100%;
+    height: auto;
+    background: #2b2b2b;
+    border-top: solid 4px #2b2b2b;
+    border-bottom: solid 4px #2b2b2b;
+}
+
+.chart-form{
+    width: 1100px;
+    height: 60px;
+    background: #2b2b2b;
+    margin: 0 auto;
+}
+
+.chart-form textarea{
+    display: inline-block;
+    width: 80%;
+    height: 60px;
+    background: #f5f5f5;
+    float: left;
+}
+
+.chart-form input{
+    width: 20%;
+    height: 60px;
+    background: #999;
+    color: #2b2b2b;
+    line-height: 60px;
+    padding: 0;
+    border-radius: 0px;
+    border: none;
+    float: left;
 }

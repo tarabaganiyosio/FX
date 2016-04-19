@@ -12,10 +12,10 @@ class UsersController < ApplicationController
   def create
     @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
-      flash[:success] = "コメントを作成しました"
+      flash[:success] = "アカウントを作成しました"
       redirect_to root_url
     else
-      @feed_items = current_user.feed_items.includes(:user).order(created_at: :desc) # この行を追加
+      @feed_items = current_user.feed_items.includes(:user).order(created_at: :desc)
       render 'static_pages/home'
     end
   end
@@ -26,4 +26,5 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :password,
                                  :password_confirmation)
   end
+
 end
